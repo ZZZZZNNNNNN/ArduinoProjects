@@ -1,7 +1,7 @@
 import serial
 import time
 
-# Change "COM3" to your Arduino port (Linux/Mac example: "/dev/ttyUSB0")
+# Change "COM5" to your Arduino port"
 arduino = serial.Serial(port="COM5", baudrate=9600, timeout=1)
 time.sleep(2)  # wait for connection
 
