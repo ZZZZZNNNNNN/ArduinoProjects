@@ -1,0 +1,48 @@
+
+
+int redLed = 13; //
+int yellowLed = 12;
+int greenLed = 11;
+
+
+
+
+
+
+void setup() {
+
+
+
+
+
+  pinMode(redLed, OUTPUT);
+  pinMode(yellowLed, OUTPUT);
+  pinMode(greenLed, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+
+
+
+
+  if (Serial.available()) {
+    char command = Serial.read();
+
+    if (command == 'R') {  // Red
+      digitalWrite(redLed, HIGH);
+      digitalWrite(yellowLed, LOW);
+      digitalWrite(greenLed, LOW);
+    }
+    else if (command == 'G') {  // Green
+      digitalWrite(redLed, LOW);
+      digitalWrite(yellowLed, LOW);
+      digitalWrite(greenLed, HIGH);
+    }
+    else if (command == 'Y') {  // Yellow
+      digitalWrite(redLed, LOW);
+      digitalWrite(yellowLed, HIGH);
+      digitalWrite(greenLed, LOW);
+    }
+  }
+}
